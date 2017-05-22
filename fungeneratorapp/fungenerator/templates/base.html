@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+        <title>Generator frajdy</title>
+
+        <!-- styles -->
+        <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC|Lato" rel="stylesheet">
+        <link href="{% static "css/font-awesome.min.css" %}" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+
+        <!-- libraries -->
+        <script type="text/javascript" src="{% static "js/lib/jquery-3.2.1.min.js" %}"></script>
+        <script type="text/javascript" src="{% static "js/lib/jquery.validate.min.js" %}></script>
+
+        <!-- scripts -->
+        <script type="text/javascript" src="{% static "js/bubblewrap.js" %}"></script>
+    </head>
+    <body>
+        <header>
+            <a id="logo" href="{% url "fungenerator:main_page" %}" class="logo">GF</a>
+            <nav>
+                <!--todo: pokaż/ukryj ikonki w zależności od tego czy użytkownik jest zalogowany-->
+                <a id="settings-link" href="settings.html" class="settings-link"><i class="fa fa-cog" aria-hidden="true"></i></a>
+                <a id="login-link" href="login.html" class="login-link"><i class="fa fa-sign-in" aria-hidden="true"></i></a>
+                <a id="logout-link" href="logout.html" class="logout-link"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+            </nav>
+        </header>
+
+        {% block content %}
+        {% endblock %}
+
+        <footer>
+            <p>Projektowanie Interfejsów. Grupa 1</p>
+            <p>Małgorzata Olak, Krzysztof Niedzielski, Aleksandra Wierzbiak</p>
+        </footer>
+    </body>
+</html>

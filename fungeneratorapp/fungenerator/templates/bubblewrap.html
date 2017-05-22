@@ -1,0 +1,27 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+        <section class="main bubblewrap">
+            <div class="box">
+                <h2>Folia Bąbelkowa</h2>
+                <p>By wziąć folię z podajnika, naciśnij przycisk <i>Pobierz folię</i>.</p>
+                <p>Oto kilka pomysłów co możesz zrobić ze swoją folią bąbelkową:</p>
+                <ul>
+                    <li>Wypstrykaj wszystkie bąbelki</li>
+                    <li>Obkręć nią piłkę i uderzaj mocno o ścianę</li>
+                    <li>Spróbuj podłożyć ją komuś pod siedzisko</li>
+                    <li>Jeśli czujesz się w niebezpieczeństwie użyj jej więcej i zrób bąbelkowy kocyk</li>
+                    <li>Jeśli czujesz, że Ci zimno - otul się folią bąbelkową!</li>
+                </ul>
+                <p>Ilość folii w podajniku: <span id="wrap_amount">3</span></p>
+                <button id="get_wrap">Pobierz folię</button>
+                <div id="bubblewrap_alert" class="nodisplay">
+                    <label class="alert"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Brak folii w podajniku!</label>
+                    <button id="empty_wrap" class="action">Załaduj podajnik</button>
+                </div>
+            </div>
+        </section>
+        
+{% endblock %}

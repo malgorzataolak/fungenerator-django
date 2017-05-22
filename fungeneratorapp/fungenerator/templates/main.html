@@ -1,0 +1,19 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<section class="main homepage">
+            <h1>Generator Frajdy</h1>
+            <div class="categories">
+                <ul class="categories-list">
+                    <li><a id="jokes_cat" href="{% url "fungenerator:jokes" %}"><span>Dowcipy</span></a></li>
+                    <li><a id="images_cat" href="{% url "fungenerator:funny_pictures" %}"><span>Obrazki</span></a></li>
+                    <li><a id="videos_cat" href="{% url "fungenerator:funny_movies" %}"><span>Filmy</span></a></li>
+                    <li><a id="tickle_cat" href="{% url "fungenerator:tickle" %}"><span>Łaskotnik</span></a></li>
+                    <li><a id="bubblewrap_cat" href="{% url "fungenerator:bubblewrap" %}"><span>Folia bąbelkowa</span></a></li>
+                </ul>
+            </div>
+        </section>
+
+{% endblock %}

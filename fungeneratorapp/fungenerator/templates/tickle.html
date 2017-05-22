@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<section class="main tickle">
+    <div class="box">
+        <h2>Łaskotnik</h2>
+        <div class="controls">
+            <ul class="controls-list">
+                <li><button id="tickle-start" class="tickle-btn action"><i class="fa fa-play" aria-hidden="true"></i></button></li>
+                <li><button id="tickle-stop" class="tickle-btn action"><i class="fa fa-stop" aria-hidden="true"></i></button></li>
+                <li><button id="tickle-fast" class="tickle-btn">Szybko</button></li>
+                <li><button id="tickle-medium" class="tickle-btn">Standard</button></li>
+                <li><button id="tickle-slow" class="tickle-btn">Wolno</button></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
