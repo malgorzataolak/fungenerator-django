@@ -25,9 +25,9 @@
                 {% if user.is_authenticated %}
                     <p>Witaj {{request.user.first_name}}</p>
                     <a href="{% url "fungenerator:settings" %}" id="settings-link" class="settings-link"><i class="fa fa-cog" aria-hidden="true"></i></a>
-                    <a id="logout-link" href="{% url "fungenerator:logout" %}" class="logout-link"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                    <a id="logout-link" href="{% url "account:logout" %}" class="logout-link"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
                 {% else %}
-                    <a id="login-link" href="{% url "fungenerator:login" %}" class="login-link"><i class="fa fa-sign-in" aria-hidden="true"></i></a>
+                    <a id="login-link" href="{% url "account:login" %}" class="login-link"><i class="fa fa-sign-in" aria-hidden="true"></i></a>
                 {% endif %}
             </nav>
         </header>
