@@ -22,10 +22,13 @@
         <header>
             <a id="logo" href="{% url "fungenerator:main_page" %}" class="logo">GF</a>
             <nav>
-                <!--todo: pokaż/ukryj ikonki w zależności od tego czy użytkownik jest zalogowany-->
-                <a id="settings-link" href="settings.html" class="settings-link"><i class="fa fa-cog" aria-hidden="true"></i></a>
-                <a id="login-link" href="login.html" class="login-link"><i class="fa fa-sign-in" aria-hidden="true"></i></a>
-                <a id="logout-link" href="logout.html" class="logout-link"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                {% if user.is_authenticated %}
+                    <p>Witaj {{request.user.first_name}}</p>
+                    <a href="{% url "fungenerator:settings" %}" id="settings-link" class="settings-link"><i class="fa fa-cog" aria-hidden="true"></i></a>
+                    <a id="logout-link" href="{% url "fungenerator:logout" %}" class="logout-link"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                {% else %}
+                    <a id="login-link" href="{% url "fungenerator:login" %}" class="login-link"><i class="fa fa-sign-in" aria-hidden="true"></i></a>
+                {% endif %}
             </nav>
         </header>
 

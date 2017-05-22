@@ -1,0 +1,50 @@
+
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<section class="main settings">
+    <div class="box">
+        <div class="fieldset">
+            <h2>Preferencje</h2>
+            <!--todo: pokaż powiadomienie jeśli wystąpi błąd w zapisywaniu ustawień-->
+            <label id="settings-validation-error" class="validation-error"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Wystąpił błąd w zapisywaniu preferencji.</label>
+            <form id="settings-form" class="settings-form">
+                <p>Moja płeć:</p>
+                <select id="setings-gender">
+                    <option value="">Wybierz płeć</option>
+                    <option value="women">Kobieta</option>
+                    <option value="men">Mężczyzna</option>
+                    <option value="other">Inna</option>
+                </select>
+                <p>Co mnie śmieszy:</p>
+                <ul class="funny-categories two-columns">
+                    <li class="checkbox-item"><input id="funny-cat-animals" name="funny-cat" type="checkbox" value="animals"><label>Zwierzęta</label></li>
+                    <li class="checkbox-item"><input id="funny-cat-kids" name="funny-cat" type="checkbox" value="kids"><label>Dzieci</label></li>
+                    <li class="checkbox-item"><input id="funny-cat-fails" name="funny-cat" type="checkbox" value="fails"><label>Porażki</label></li>
+                    <li class="checkbox-item"><input id="funny-cat-stereotypes" name="funny-cat" type="checkbox" value="stereotypes"><label>Stereotypy</label></li>
+                    <li class="checkbox-item"><input id="funny-cat-language" name="funny-cat" type="checkbox" value="language"><label>Językowe</label></li>
+                    <li class="checkbox-item"><input id="funny-cat-absurd" name="funny-cat" type="checkbox" value="absurd"><label>Absurd</label></li>
+                </ul>
+                
+                <button id="settings-btn" class="button" type="submit">Zapisz ustawienia</button>
+            </form>
+        </div>
+
+        <div class="fieldset">
+            <h2>Ustawienia konta</h2>
+            <!--todo: pokaż powiadomienie jeśli wystąpi błąd w zapisywaniu ustawień-->
+            <label id="settings-account-validation-error" class="validation-error"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Wystąpił błąd w zapisywaniu ustawień.</label>
+            <form id="settings-account-form" class="settings-account-form">
+                <input id="settings-account-nick" type="text" name="nick" placeholder="Zmień nick">
+                <input id="settings-account-password-old" type="text" name="password_old" placeholder="Obecne hasło" minlength="6">
+                <input id="settings-account-password-new" type="text" name="password_new" placeholder="Nowe hasło" minlength="6">
+                <input id="settings-account-password-new2" type="text" name="password_new2" placeholder="Powtórz nowe hasło" minlength="6">
+                <button id="settings-account-btn" class="button" type="submit">Aktualizuj</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -19,3 +19,6 @@ def jokes(request):
 
 def bubblewrap(request):
 	return render(request, 'bubblewrap.html')
+
+def settings(request):
+	return render(request, 'settings.html')

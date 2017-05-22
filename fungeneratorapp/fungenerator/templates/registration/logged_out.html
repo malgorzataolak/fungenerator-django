@@ -1,0 +1,23 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+        <section class="main login">
+            <div class="box">
+                <h2>Zostałeś pomyślnie wylogowany!</h2>
+                <!--todo: pokaż powiadomienie jeśli wystąpi błąd logowania-->
+                <p>Możesz zawsze <a href="{% url "login" %}">zalogować się</a> ponownie!</p>
+                    <!--
+                    <form id="login-form" class="login-form">
+                        <input type="text" id="login-nick" name="nick" placeholder="Nick">
+                        <input type="password" id="login-password" name="password" placeholder="Hasło" minlength="6">
+                        <button id="login-btn" class="button" type="submit">Zaloguj</button>
+                    </form>
+                    -->
+                <p>Nie masz konta? <a href="/generator/registration.html"><strong>Zarejestruj się!</strong></a></p>
+                <p>Nie pamiętasz hasła? <a href="/generator/forget.html"><strong>Przypomnij hasło</strong></a></p>
+            </div>
+        </section>
+
+{% endblock %}

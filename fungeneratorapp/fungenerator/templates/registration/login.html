@@ -1,0 +1,37 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+        <section class="main login">
+            <div class="box">
+                <h2>Logowanie</h2>
+                <!--todo: pokaż powiadomienie jeśli wystąpi błąd logowania-->
+                {% if form.errors %}
+                    <label id="login-validation-error" class="validation-error"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Błąd w logowaniu. Niepoprawny login lub hasło.</label>
+                {% else %}
+                    <p>Wypełnij formularz, aby się zalogować</p>
+                {% endif %}
+                    <div class="login-form">
+                        <form action="{% url 'account:login' %}" method="post">
+                            {{ form.as_p }}
+                            {% csrf_token %}
+                            <input type="hidden" name="next" value="{{ next }}"/>
+                            <p><input type="submit" value="Zaloguj"></p>
+                        </form>
+                    </div>
+                    <!--
+                    <form id="login-form" class="login-form">
+                        <input type="text" id="login-nick" name="nick" placeholder="Nick">
+                        <input type="password" id="login-password" name="password" placeholder="Hasło" minlength="6">
+                        <button id="login-btn" class="button" type="submit">Zaloguj</button>
+                    </form>
+                    -->
+                <p>Nie masz konta? <a href="/generator/registration.html"><strong>Zarejestruj się!</strong></a></p>
+                <p>Nie pamiętasz hasła? <a href="/generator/forget.html"><strong>Przypomnij hasło</strong></a></p>
+            </div>
+        </section>
+
+{% endblock %}
+
+

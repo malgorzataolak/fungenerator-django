@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+        <section class="main registration">
+            <div class="box">
+                <h2>Witaj, {{ new_user.first_name }}</h2>
+                <p>Twoje konto zostało utworzone, możesz się już <a href="{% url "account:login" %}">zalogować</a></p>
+                
+            </div>
+        </section>
+
+{% endblock %}
