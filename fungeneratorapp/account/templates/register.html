@@ -2,25 +2,16 @@
 {% load static %}
 
 {% block content %}
+<script type="text/javascript" src="{% static "js/register.js" %}"></script>
         <section class="main registration">
             <div class="box">
                 <h2>Rejestracja</h2>
                 <!--todo: pokaż powiadomienie jeśli wystąpi błąd rejestracji-->
-                <label id="register-validation-error" class="validation-error"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Wystąpił błąd w rejestracji.</label>
-                <form action="." method="post">
+                <form action="." method="post" id="register-form">
                     {{ user_form.as_p }}
                     {% csrf_token %}
                     <p><input type="submit" value="Utworz konto"></p>
                 </form>
-                <!--
-                <form id="register-form" class="register-form">
-                    <input id="register-nick" type="text" name="nick" placeholder="Nick">
-                    <input id="register-email" type="email" name="email" placeholder="E-mail">
-                    <input id="register-password" type="password" name="password" placeholder="Hasło" minlength="6">
-                    <input id="register-password2" type="password" name="password2" placeholder="Powtórz hasło" minlength="6">
-                    <button id="register-btn" class="button" type="submit">Zarejestruj</button>
-                </form>
-                -->
             </div>
         </section>
 

@@ -4,12 +4,11 @@
 {% load static %}
 
 {% block content %}
+<script type="text/javascript" src="{% static "js/settings.js" %}"></script>
 <section class="main settings">
     <div class="box">
         <div class="fieldset">
             <h2>Preferencje</h2>
-            <!--todo: pokaż powiadomienie jeśli wystąpi błąd w zapisywaniu ustawień-->
-            <label id="settings-validation-error" class="validation-error"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Wystąpił błąd w zapisywaniu preferencji.</label>
             <form id="settings-form" class="settings-form" action="." method="post">
 		{% csrf_token %}
                 <p>Co mnie śmieszy:</p>
@@ -27,14 +26,11 @@
         </div>
 
         <div class="fieldset">
-            <h2>Ustawienia konta</h2>
-            <!--todo: pokaż powiadomienie jeśli wystąpi błąd w zapisywaniu ustawień-->
-            <label id="settings-account-validation-error" class="validation-error"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Wystąpił błąd w zapisywaniu ustawień.</label>
+            <h2>Zmiana hasła do konta</h2>
             <form id="settings-account-form" class="settings-account-form">
-                <input id="settings-account-nick" type="text" name="nick" placeholder="Zmień nick">
-                <input id="settings-account-password-old" type="text" name="password_old" placeholder="Obecne hasło" minlength="6">
-                <input id="settings-account-password-new" type="text" name="password_new" placeholder="Nowe hasło" minlength="6">
-                <input id="settings-account-password-new2" type="text" name="password_new2" placeholder="Powtórz nowe hasło" minlength="6">
+                <input id="settings-account-password-old" type="password" name="password_old" placeholder="Obecne hasło" minlength="6">
+                <input id="settings-account-password-new" type="password" name="password_new" placeholder="Nowe hasło" minlength="6">
+                <input id="settings-account-password-new2" type="password" name="password_new2" placeholder="Powtórz nowe hasło" minlength="6">
                 <button id="settings-account-btn" class="button" type="submit">Aktualizuj</button>
             </form>
         </div>

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <section class="main forget">
+        <div class="box">
+            <h2>Przypomnienie hasła</h2>
+            <form id="forget-form" class="forget-form" action="." method="post">
+		{% csrf_token %}
+                <p>Podaj adres e-mail. Zostanie na niego wysłany link do resetowania hasła.</p>
+                <input type="email" id="forget-email" name="email" placeholder="E-mail">
+                <button id="forget-btn" class="button" type="submit">Wyślij</button>
+            </form>
+        </div>
+    </section>
+
+{% endblock %}
