@@ -15,3 +15,8 @@ def register(request):
 	else:
 		user_form=UserRegistrationForm()
 	return render(request, 'register.html', {'user_form':user_form})
+
+def forget(request):
+	if request.method=='POST':
+		return render(request, 'mail_sent.html')
+	return render(request, 'forget.html')
