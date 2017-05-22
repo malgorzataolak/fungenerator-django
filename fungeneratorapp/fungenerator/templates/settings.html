@@ -10,14 +10,8 @@
             <h2>Preferencje</h2>
             <!--todo: pokaż powiadomienie jeśli wystąpi błąd w zapisywaniu ustawień-->
             <label id="settings-validation-error" class="validation-error"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Wystąpił błąd w zapisywaniu preferencji.</label>
-            <form id="settings-form" class="settings-form">
-                <p>Moja płeć:</p>
-                <select id="setings-gender">
-                    <option value="">Wybierz płeć</option>
-                    <option value="women">Kobieta</option>
-                    <option value="men">Mężczyzna</option>
-                    <option value="other">Inna</option>
-                </select>
+            <form id="settings-form" class="settings-form" action="." method="post">
+		{% csrf_token %}
                 <p>Co mnie śmieszy:</p>
                 <ul class="funny-categories two-columns">
                     <li class="checkbox-item"><input id="funny-cat-animals" name="funny-cat" type="checkbox" value="animals"><label>Zwierzęta</label></li>
