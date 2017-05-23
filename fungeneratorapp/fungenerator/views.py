@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .forms import SettingsForm
+from .forms import ChangePasswordForm
 from .models import UserSettings
 from django.http import HttpResponse
 
@@ -109,6 +110,23 @@ def jokes(request):
 
 def bubblewrap(request):
 	return render(request, 'bubblewrap.html')
+
+def change_password(request):
+	current_user = request.user
+	message = "Nie dokonano zmian w haśle"
+	if request.method=='POST':
+		form = ChangePasswordForm(request.POST)
+		if form.is_valid():
+			data = form.cleaned_data
+			if not current_user.check_password(data['old_password']):
+				message = "Podano niepoprawne stare hasło. Hasło nie zostało zmienione"
+			else:
+				current_user.set_password(data['new_password'])
+				current_user.save()
+				message = "Pomyślnie zmieniono hasło"
+	
+	return render(request, 'change_password.html', {"message": message })
+
 
 def settings(request):
 	current_user = request.user

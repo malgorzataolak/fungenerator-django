@@ -15,6 +15,5 @@ urlpatterns=[ url(r'^$', views.main_page, name='main_page'),
 	url(r'^jokes/', views.jokes, name='jokes'),
 	url(r'^bubblewrap/', views.bubblewrap, name='bubblewrap'),
 	url(r'^settings/', views.settings, name='settings'),
-
-
+	url(r'^change_password/', views.change_password, name='change_password'),
 ]
