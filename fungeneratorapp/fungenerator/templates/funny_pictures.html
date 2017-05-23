@@ -8,9 +8,10 @@
             <h2>Śmieszne obrazki</h2>
 
             <div id="images-slider" class="slider images-slider">
-                <div class="image-slide"><img alt="funnypicture" class="funnypic" src="{% static "img/funnypic/funnycat.jpg" %}"></div>
-                <div class="image-slide"><img alt="funnypicture" class="funnypic" src="{% static "img/funnypic/pugs.jpg" %}"></div>
-                <div class="image-slide"><img alt="funnypicture" class="funnypic" src="{% static "img/funnypic/doge.jpg" %}"></div>
+		{% static "img/funnypic/" as base_url %}
+		{% for item in images %}
+                <div class="image-slide"><img alt="funnypicture" class="funnypic" src="{{ base_url }}{{ item }}"}"></div>
+		{% endfor %}
             </div>
         </div>
     </section>

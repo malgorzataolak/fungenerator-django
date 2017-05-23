@@ -8,12 +8,40 @@
             <div class="box">
                 <h2>Dowcipy</h2>
 
+
                 <div id="jokes-slider" class="slider jokes-slider">
+		{% if "absurd" in jokes %}
                     <div class="joke-slide">
                         <h4>Chińska wróżka</h4>
                         <p>- Jak nazywa się chińska wróżka?</p>
                         <p>- Yoto Chua</p>
                     </div>
+		{% endif %}
+		{% if "fails" in jokes %}
+                    <div class="joke-slide">
+                        <h4>Czynsz</h4>
+                        <p>-Mąż do żony:</p>
+                        <p>- Kochanie, spełniło się twoje marzenie, by zamieszkać w droższym mieszkaniu. Od przyszłego tygodnia podnoszą nam czynsz.</p>
+                    </div>
+		{% endif %}
+		{% if "kids" in jokes %}
+                    <div class="joke-slide">
+                        <h4>Uroda</h4>
+                        <p>Jasio patrzy zafascynowany, jak jego mama kładzie maseczkę na twarz. </p>
+                        <p>- Po co to robisz, mamusiu? - pyta. </p>
+                        <p>- Bo chcę być piękna.</p>
+                        <p>Po pewnym czasie mama zaczyna zmywać maseczkę. </p>
+                        <p>- Co się stało? - pyta Jasio. - Poddałaś się?!</p>
+                    </div>
+		{% endif %}
+		{% if "stereotypes" in jokes %}
+                    <div class="joke-slide">
+                        <h4>Ślimaki</h4>
+                        <p>Dlaczego Francuzi lubią ślimaki?</p>
+                        <p>Bo nie lubią szybkich przekąsek.</p>
+                    </div>
+		{% endif %}
+		{% if "language" in jokes %}
                     <div class="joke-slide">
                         <h4>Drukarka</h4>
                         <p>- Dlaczego drukarka nigdy nie wygrywa w wyścigach?</p>
@@ -24,6 +52,8 @@
                         <p>- Co mówi informatyk po ślubie?</p>
                         <p>- Pobieranie zakończone!</p>
                     </div>
+		{% endif %}
+		{% if "animals" in jokes %}
                     <div class="joke-slide">
                         <h4>Żółwik</h4>
                         <p>Idą trzy żółwie gęsiego przez pustynię. Pierwszy mówi:</p>
@@ -34,8 +64,8 @@
                         <p>- Przede mną pustynia, a za mną pustynia.</p>
                         <p>Dlaczego tak powiedział? Bo to był żółwik kłamczuszek.</p>
                     </div>
+		{% endif %}
                 </div>
-
             </div>
         </section>
 
