@@ -1,9 +1,11 @@
 from django.shortcuts import render
 from .forms import SettingsForm
 from .models import UserSettings
+from django.http import HttpResponse
 
 from .fun_content import images
 from .fun_content import videos
+from .fun_content import tickler
 
 # Create your views here.
 
@@ -12,6 +14,26 @@ def main_page(request):
 
 def tickle(request):
 	return render(request, 'tickle.html')
+
+def tickle_start(request):
+	if request.is_ajax():
+		tickler.spin()
+		return HttpResponse("ok")
+
+def tickle_fast(request):
+	if request.is_ajax():
+		tickler.quick_rotation()
+		return HttpResponse("ok")
+
+def tickle_normal(request):
+	if request.is_ajax():
+		tickler.normal_rotation()
+		return HttpResponse("ok")
+
+def tickle_slow(request):
+	if request.is_ajax():
+		tickler.slow_rotation()
+		return HttpResponse("ok")
 
 def funny_movies(request):
 	request_user = request.user
