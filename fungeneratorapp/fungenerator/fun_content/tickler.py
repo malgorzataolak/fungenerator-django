@@ -1,7 +1,5 @@
 import sys
 
-#import RPi.GPIO as GPIO
-
 import time
 
 
@@ -12,6 +10,7 @@ def sing():
 
 def spin():
         print("starting to spin")
+        import RPi.GPIO as GPIO
 
         GPIO.setmode(GPIO.BOARD)
 
